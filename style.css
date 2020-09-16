@@ -1,0 +1,113 @@
+/* #svg_2 {
+    fill: red;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 3000;
+    animation: dash 5s ease-in infinite;
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 2000;
+    }
+
+    to {
+        stroke-dashoffset: 1000;
+    }
+} */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: pink;
+    /* transform: perspective(1500px); */
+    /* perspective: 500px; */
+}
+
+#hand {
+    /* perspective: 10px; */
+    transform-style: preserve-3d;
+    transform: rotateZ(30deg);
+
+}
+
+.finger {
+    display: inline-block;
+    background: black;
+    border-radius: 20px;
+    /* box-shadow: 0 5px 5px white; */
+    filter: drop-shadow(16px 16px 10px black);
+    /* position: relative; */
+    /* z-index: 9999; */
+    /* animation: middle-finger-bend 1s infinite; */
+}
+
+#thumb {
+    width: 45px;
+    height: 150px;
+    transform: rotate(-30deg) translate(-20px, 70px);
+}
+
+#index-finger {
+    width: 40px;
+    height: 200px;
+    transform: rotate(-10deg) translateX(0px);
+}
+
+#middle-finger {
+    width: 40px;
+    height: 250px;
+    transform: translateX(18px);
+    animation: middle-finger-bend 1s infinite;
+    position: relative;
+    z-index: -99;
+}
+
+#bottom-middle-finger {
+    width: 40px;
+    height: 250px;
+    transform: translate(-25px, 100px);
+    position: absolute;
+    z-index: 999;
+}
+
+@keyframes middle-finger-bend {
+    to {
+        transform: translateX(18px) rotate3d(1, 1, 1, -50deg);
+        /* background: red; */
+    }
+}
+
+@keyframes bottom-middle-finger-bend {
+    from {
+        transform: translate(-25px, 100px) rotateX(0deg);
+        /* background: blue; */
+    }
+    to {
+        transform: translate(-25px, 100px) rotate3d(1, 1, 1, -60deg);
+        /* background: red; */
+    }
+}
+
+#ring-finger {
+    width: 40px;
+    height: 210px;
+    transform: rotate(15deg) translateX(32px);
+}
+
+#pinky {
+    width: 35px;
+    height: 150px;
+    transform: rotate(25deg) translateX(45px);
+}
+
+#palm {
+    display: inline-block;
+    background: black;
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+    transform: translate(-180px, 110px);
+    filter: drop-shadow(25px 30px 25px black);
+}
